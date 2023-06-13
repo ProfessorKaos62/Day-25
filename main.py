@@ -1,15 +1,24 @@
-# with open('weather_data.csv', mode='r') as weather_data:
-#     data = weather_data.readlines()
-    
-# import csv
-
-# with open('weather_data.csv', mode='r') as weather_data:
-#     data = csv.reader(weather_data)
-#     temperatures = []
-#     for row in data:
-#         if row[1] != 'temp':
-#             temperatures.append(int(row[1]))
-#     print(temperatures)
-
 import pandas
-print('it worked')
+
+# data = pandas.read_csv('weather_data.csv')
+
+# data_dict = data.to_dict()
+# print(data_dict)
+
+# data_list = data['temp'].to_list()
+# print(data['temp'].max())
+
+# Monday = data[data.day == 'Monday']
+# print((Monday.temp * 9/5) + 32)
+
+# day_of_max = data[data.temp == data.temp.max()]
+# print(day_of_max)
+
+data_dict = {
+    'students': ['Amy', 'James', 'Angela'],
+    'scores': [76, 89, 69]
+}
+
+data = pandas.DataFrame(data_dict)
+
+data.to_csv('student_scores.csv')
